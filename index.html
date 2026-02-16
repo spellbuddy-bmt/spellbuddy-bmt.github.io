@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainwave Matrix Tech</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="bmt_logo.ico">
+
+    <!-- Meta tags -->
+    <meta name="description" content="Brainwave Matrix Tech builds educational apps for kids, focusing on math skills, puzzles, and interactive learning experiences.">
+    <meta name="keywords" content="kids math apps, arithmetic learning app, educational apps for kids, Brainwave Matrix Tech">
+    <meta name="author" content="Brainwave Matrix Tech">
+    <meta name="robots" content="index, follow">
+
+<title>Spell Buddy - Brainwave Matrix Tech</title>
+<style>
+:root { 
+    --primary: #00a4ef;
+    --dark: #1f1f1f;
+    --grey: #5f6368;
+    --light: #ffffff; 
+}
+body { font-family: 'Roboto', 'Segoe UI', sans-serif; margin: 0; background: #fdfdfd; color: var(--dark); line-height: 1.6; }
+
+header { background: white; padding: 20px 8%; display: flex; align-items: center; border-bottom: 1px solid #eee; }
+.logo-img { height: 50px; margin-right: 15px; border-radius: 12px; }
+.brand-name { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.5px; }
+nav { margin-left: auto; }
+nav a { margin-left: 15px; text-decoration: none; color: var(--dark); font-weight: 500; transition: color 0.3s; }
+nav a:hover { color: var(--primary); }
+
+.main-content { max-width: 800px; margin: 60px auto; padding: 0 20px; text-align: center; }
+h1 { font-size: 2.8rem; margin-bottom: 10px; color: var(--dark); }
+.tagline { font-size: 1.25rem; color: var(--grey); margin-bottom: 40px; }
+
+.badge-link img { width: 220px; transition: transform 0.2s; }
+.badge-link img:hover { transform: scale(1.05); }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 60px; text-align: left; }
+.card { background: #f8f9fa; padding: 30px; border-radius: 20px; border: 1px solid #e9ecef; }
+.card h3 { color: var(--primary); margin-top: 0; font-size: 1.3rem; }
+.card p { color: var(--grey); margin-bottom: 0; }
+
+.contact-box {
+    margin-top: 60px; 
+    padding: 40px; 
+    border-radius: 24px; 
+    background: linear-gradient(145deg, #ffffff, #f0f4f8); 
+    border: 1px solid #d1d9e6; 
+    text-align: center; /* Important: center content */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-box h2 { margin-top: 0; font-size: 1.8rem; }
+.contact-email { 
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center; /* Center horizontally */
+    background: white; 
+    padding: 12px 28px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    color: var(--primary); 
+    font-weight: 600; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    margin: 20px auto 0 auto; /* Center and add top spacing */
+    border: 1px solid #eee;
+    transition: background 0.3s; 
+}
+
+.contact-email:hover { background: #f0f7ff; }
+
+footer { margin-top: 100px; padding: 40px; font-size: 0.85rem; color: #999; border-top: 1px solid #eee; text-align: center; }
+footer a { color: #999; text-decoration: none; margin: 0 10px; }
+
+/* Floating Contact Button */
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 15px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background 0.3s;
+    z-index: 9999;
+}
+.floating-contact:hover {
+    background: #007ac1; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Desktop menu */
+.nav-desktop { display: flex; }
+.nav-desktop a { margin-left: 15px; text-decoration:none; color:var(--dark); font-weight:500; }
+.nav-desktop a:hover { color: var(--primary); }
+
+/* Mobile menu */
+.nav-mobile { display: none; position: relative; }
+.hamburger { font-size: 1.8rem; cursor: pointer; user-select: none; }
+.mobile-links { display: none; flex-direction: column; background: var(--light); position: absolute; top: 35px; right: 0; width: 200px; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
+.mobile-links a { padding: 10px 15px; border-bottom: 1px solid #eee; text-decoration:none; color:var(--dark); font-weight:500; }
+.mobile-links a:hover { background: var(--accent); color: var(--primary); }
+
+/* Last item no border */
+.mobile-links a:last-child { border-bottom: none; }
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .nav-desktop { display: none; }
+    .nav-mobile { display: block; }
+}
+
+@media (max-width: 480px) {
+    .contact-box { padding: 30px 15px; }
+    .contact-email { padding: 10px 20px; font-size: 0.95rem; }
+}
+
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-tagline {
+    font-size: 0.85rem;
+    color: #5f6368;
+    margin-top: 2px;
+    letter-spacing: 0.3px;
+}
+
+.site-header {
+    background: #ffffff;
+    padding: 16px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+}
+
+/* Left side (logo + brand) */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-img {
+    height: 52px;
+    border-radius: 12px;
+}
+
+/* Brand text stacked */
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.brand-tagline {
+    font-size: 0.85rem;
+    color: #5f6368;
+    margin-top: 2px;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+    color: var(--primary);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #ffffff;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .main-nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+}
+
+.main-nav a.active {
+    color: var(--primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary);
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    padding: 16px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Brand */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-img {
+    height: 52px;
+    border-radius: 12px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.brand-tagline {
+    font-size: 0.85rem;
+    color: #5f6368;
+    margin-top: 2px;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    gap: 22px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: var(--primary);
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animate icon */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #ffffff;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid #f1f1f1;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-left">
+        <img src="bmt_logo.ico" alt="Brainwave Matrix Tech Icon" class="logo-img">
+        <div class="brand-text">
+            <div class="brand-name">Brainwave Matrix Tech</div>
+            <div class="brand-tagline">
+                Brainpower Meets Technology, Achieving Anything
+            </div>
+        </div>
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="main-nav">
+        <a href="https://brainwavematrixtech.pages.dev/">Home</a>
+        <a href="https://brainwavematrixtech.pages.dev/arithmetic">Arithmetic</a>
+        <a href="https://brainwavematrixtech.pages.dev/arithmeticpuzzle">Arithmetic Puzzle</a>
+        <a href="https://brainwavematrixtech.pages.dev/numberninjas">Number Ninjas</a>
+        <a href="https://brainwavematrixtech.pages.dev/about">About</a>
+        <a href="https://brainwavematrixtech.pages.dev/contact">Contact</a>
+    </nav>
+	
+</header>
+
+<div class="main-content">
+    <section class="hero">
+        <h1>Arithmetic</h1>
+        <p class="tagline">Spell Buddy.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.bmt.spellbuddy">
+				<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" style="width:180px; margin-top:15px;">
+		</a>
+    </section>
+
+   TDB - Under development
+   
+    <div class="contact-box">
+        <h2>Support & Feedback</h2>
+        <p>Need help or want to suggest a feature? Connect with us directly.</p>
+        <a href="mailto:brainwavematrixtech@gmail.com" class="contact-email">✉️ brainwavematrixtech@gmail.com</a>
+    </div>
+
+    <footer>
+	     <p>&copy; 2026 Brainwave Matrix Tech. All rights reserved.</p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.bmt.spellbuddy">Play Store Listing</a></p>
+    </footer>
+</div>
+<a href="https://brainwavematrixtech.pages.dev/contact" class="floating-contact">Contact Us</a>
+<script>
+    const header = document.querySelector('.site-header');
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    const links = document.querySelectorAll('.main-nav a');
+
+    // Toggle mobile menu
+    toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    // Auto-close on link click (mobile)
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            toggleBtn.classList.remove('active');
+        });
+    });
+
+    // Active menu highlight
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+</script>
+
+</body>
+</html>
+
+
+
